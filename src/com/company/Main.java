@@ -24,8 +24,11 @@ public class Main {
                 System.out.println("PC-value is smaller than user-value");
             } else {
                 System.out.println("PC-value and user-value are equal");
-                System.out.println("The number of chanses used: "+i);
-                i=10;
+                System.out.println("The number of chances used: "+i);
+                break;
+            }
+            if (i==10){
+                System.out.println("You have lost!");
             }
         }
 
