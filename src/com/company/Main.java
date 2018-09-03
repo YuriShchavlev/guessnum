@@ -12,25 +12,33 @@ public class Main {
         int mynum = rand.nextInt(100) + 1;
         System.out.println("PC-number is: " + mynum);
 
-        for (int i = 1; i < 11; i++) {
+        String answer = "no";
 
-            int usernum = scan.nextInt();
-            //  System.out.println("User has entered: "+usernum);
+        do {
 
-            if (mynum > usernum) {
-                System.out.println("PC-value is greater than user-value");
+            for (int i = 1; i < 11; i++) {
 
-            } else if (mynum < usernum) {
-                System.out.println("PC-value is smaller than user-value");
-            } else {
-                System.out.println("PC-value and user-value are equal");
-                System.out.println("The number of chances used: "+i);
-                break;
-            }
-            if (i==10){
-                System.out.println("You have lost!");
+                int usernum = scan.nextInt();
+                //  System.out.println("User has entered: "+usernum);
+
+                if (mynum > usernum) {
+                    System.out.println("PC-value is greater than user-value");
+
+                } else if (mynum < usernum) {
+                    System.out.println("PC-value is smaller than user-value");
+                } else {
+                    System.out.println("PC-value and user-value are equal. You have guessed!");
+                    System.out.println("The number of chances used: " + i);
+                    break;
+                }
+                if (i == 10) {
+                    System.out.println("You have lost!");
+                    System.out.println("Do you want to try one more time?");
+                    answer = scan.next();
+                }
             }
         }
-
+        while (answer.equals("yes"));
+        System.out.println("Thank you for participation!");
     }
 }
